@@ -1,10 +1,10 @@
 import React from "react";
-import UserManagement from "./User/UserManagement";
+import Table from "../components/User/Table";
 
 const App = () => {
   return (
     <>
-      <UserManagement />
+      <Table />
     </>
   );
 };

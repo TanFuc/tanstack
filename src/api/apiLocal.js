@@ -1,29 +1,48 @@
+// src/api.js
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "http://localhost:5000/", // URL của json-server
-});
+// URL API cho đối tượng user
+const API_URL = "http://localhost:5000/users";
 
-// Lấy danh sách người dùng
+// Lấy danh sách users từ API
 export const fetchUsers = async () => {
-  const response = await api.get("/posts");
-  return response.data; // Lấy dữ liệu người dùng từ 'posts'
+  try {
+    const response = await axios.get(API_URL);
+    return response.data; // Trả về dữ liệu users từ API
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    throw error;
+  }
 };
 
-// Tạo người dùng mới
-export const createUser = async (user) => {
-  const response = await api.post("/posts", user);
-  return response.data;
+// Tạo user mới
+export const createUser = async (newUser) => {
+  try {
+    const response = await axios.post(API_URL, newUser); // newUser chứa {username, email, password}
+    return response.data; // Trả về user mới đã được tạo
+  } catch (error) {
+    console.error("Error creating user:", error);
+    throw error;
+  }
 };
 
-// Cập nhật người dùng
-export const updateUser = async (id, user) => {
-  const response = await api.put(`/posts/${id}`, user);
-  return response.data;
+// Cập nhật thông tin user theo id
+export const updateUser = async (id, updatedUser) => {
+  try {
+    const response = await axios.put(`${API_URL}/${id}`, updatedUser); // updatedUser chứa thông tin mới
+    return response.data; // Trả về dữ liệu user đã được cập nhật
+  } catch (error) {
+    console.error(`Error updating user with ID ${id}:`, error);
+    throw error;
+  }
 };
 
-// Xóa người dùng
+// Xóa user theo id
 export const deleteUser = async (id) => {
-  const response = await api.delete(`/posts/${id}`);
-  return response.data;
+  try {
+    await axios.delete(`${API_URL}/${id}`); // Xóa user theo ID
+  } catch (error) {
+    console.error(`Error deleting user with ID ${id}:`, error);
+    throw error;
+  }
 };

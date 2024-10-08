@@ -1,23 +1,22 @@
 {
-  "posts": [
+  "users": [
     {
-      "username": "mmm_2024êăâêăâêăâê",
-      "email": "terriesharleen1527@gmail.com",
-      "password": "123123",
-      "id": "45be"
-    },
-    {
-      "id": "9171",
-      "username": "2100001806",
-      "email": "terriesharleen1527@yahoo.com",
-      "password": "ăâêăâê"
-    },
-    {
-      "id": "6b0d",
-      "username": "2100001806",
-      "email": "phucqn311@gmail.com",
+      "id": "033c",
+      "username": "ăâê",
+      "email": "ăâê",
       "password": "ăâê"
+    },
+    {
+      "id": "9187",
+      "username": "213",
+      "email": "ăâêăâêăâ1122",
+      "password": "ăâêăâêă"
+    },
+    {
+      "id": "cfa9",
+      "username": "123",
+      "email": "22",
+      "password": "123"
     }
-  ],
-  "register": []
+  ]
 }
