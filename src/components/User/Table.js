@@ -1,20 +1,17 @@
-// src/components/User/Table.js
 import React, { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { fetchUsers, deleteUser } from "../../api/apiLocal"; // Đảm bảo đúng đường dẫn tới api
+import { fetchUsers, deleteUser } from "../../api/apiLocal";
 import TableCard from "./TableCard";
 
 const Table = () => {
   const queryClient = useQueryClient();
   const [editingUser, setEditingUser] = useState(null);
 
-  // Fetch danh sách users với react-query
   const { data: users = [], isLoading } = useQuery({
     queryKey: ["users"],
     queryFn: fetchUsers,
   });
 
-  // Mutation để xóa người dùng
   const deleteUserMutation = useMutation({
     mutationFn: deleteUser,
     onSuccess: () => {
@@ -22,7 +19,6 @@ const Table = () => {
     },
   });
 
-  // Hàm xử lý xóa người dùng
   const handleDelete = async (id) => {
     await deleteUserMutation.mutateAsync(id);
   };
