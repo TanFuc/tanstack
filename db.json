@@ -1,22 +1,16 @@
 {
   "users": [
     {
-      "id": "50f6",
-      "username": "123",
-      "email": "123",
-      "password": "123"
+      "id": "5ff4",
+      "username": "1234",
+      "email": "12344@gmail.com",
+      "password": "123123"
     },
     {
-      "id": "0adc",
-      "username": "123123",
-      "email": "123123",
+      "id": "4839",
+      "username": "1234",
+      "email": "1234@gmail.com",
       "password": "123"
-    },
-    {
-      "id": "f06f",
-      "username": "123",
-      "email": "123",
-      "password": "123333"
     }
   ]
 }
